@@ -11,7 +11,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') { // Will pick the global server connection you have configured
-                    sh './gradlew clean check sonarqube --info --stacktrace'
+                    sh './app-sonar/gradlew clean check sonarqube --info --stacktrace'
                 }
             }
         }
