@@ -217,3 +217,65 @@ TOKEN: b913fa691ddae72728d323eed96834d8312e3996
 
 ![sonarqube-overview](./img/sonarqube-overview.png)
 ![sonarqube-issues](./img/sonarqube-issues.png)
+
+---
+
+# SonarQube in Jenkins
+
+[[Refer] SonarQube 정적분석 및 Jenkins CI/CD 통합](https://waspro.tistory.com/596)
+
+## SonarQube setup
+
+Jenkins에서 Quality Gates 상태 체크를 위한 webhook 설정  
+> http://jenkins:8080/sonarqube-webhook/
+
+![sonarqube-jenkins-webhook1](./img/sonarqube-jenkins-webhook1.png)
+![sonarqube-jenkins-webhook2](./img/sonarqube-jenkins-webhook2.png)
+
+## Jenkins Plugin
+
+- SonarQube Scanner
+- Sonar Quality Gates
+- JaCoCo
+
+### Plugin setup
+
+Dashboard > Configure System > SonarQube servers
+
+- SonarQube 사용자 Token을 Secret text 타입으로 생성하여 authentication으로 설정하도록한다.
+
+![jenkins-sonarqube-server-setup](./img/jenkins-sonarqube-server-setup.png)
+
+Dashboard > Global Tool Configuration > SonarQube Scanner
+
+- Install automatically를 체크하여 자동으로 설치하도록 구성한다.
+
+![jenkins-sonarqube-scanner-setup](./img/jenkins-sonarqube-scanner-setup.png)
+
+- SonarQube Analysis
+  - 대상 SonarQube Server를 지정하여 분석을 진행하는 과정
+  - withSonarQubeEnv는 Jenkins 관리 > 시스템 설정에 등록한 SonarQube Server Name과 매핑
+- SonarQube Quality Gate
+  - SonarQube Server에서 분석 결과를 응답하기까지 대기하도록 하는 Stage, 대기 시간을 지정하여 무한정 대기하는 상태를 방지하도록 함 
+  - waitForQualityGate는 Server에서 분석을 완료하고 상태를 반환할때까지 파이프라인을 중단시키는 시간을 지정
+
+## Jenkins Project
+
+### Preparation
+
+- Github Token을 Secret text 타입으로 생성하여 Credentials로 설정하도록한다.
+
+![jenkins-github-config](./img/jenkins-github-config.png)
+
+### Setup
+
+- Pipeline 타입의 Project를 생성한다.
+- 상세 구성은 아래와 같이 설정하고 실제 Pipeline의 구성 groovy 설정은 소스에서 가져와 반영하도록 한다.
+
+![jenkins-pipeline-setup1](./img/jenkins-pipeline-setup1.png)
+
+![jenkins-pipeline-setup2](./img/jenkins-pipeline-setup2.png)
+
+### Example
+
+![jenkins-sonarqube](./img/jenkins-sonarqube.png)
