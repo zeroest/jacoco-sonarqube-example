@@ -13,8 +13,21 @@ services:
       - ./sonarqube/extensions:/opt/sonarqube/extensions
       - ./sonarqube/logs:/opt/sonarqube/logs
       - ./sonarqube/data:/opt/sonarqube/data
-#    networks:
-#      - sonarqube-net
+    networks:
+      - sonarqube-net
 
-# networks:
-#  sonarqube-net:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts-jdk11
+    ports:
+      - 8080:8080
+      - 50000:50000
+#    restart: unless-stopped
+    volumes:
+      - ./jenkins:/var/jenkins_home
+    networks:
+      - sonarqube-net
+
+
+networks:
+  sonarqube-net:

@@ -4,3 +4,5 @@ sonarqube-docker/sonarqube/data/
 sonarqube-docker/sonarqube/extensions/
 sonarqube-docker/sonarqube/logs/
 
+sonarqube-docker/jenkins/
+
