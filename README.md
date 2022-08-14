@@ -181,3 +181,39 @@ jacocoTestCoverageVerification {
 ![/jacocoTestCoverageVerification](./img/jacocoTestCoverageVerification.png)
 
 ---
+
+# SonarQube
+
+[SonarQube Doc](https://docs.sonarqube.org/latest/)
+[SonarQube for Gradle](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-gradle/)
+
+> SonarQube is an automatic code review tool to detect bugs, vulnerabilities, and code smells in your code. It can integrate with your existing workflow to enable continuous code inspection across your project branches and pull requests.
+
+[[Refer] th-deng/sonarqube-on-gradle-sample](https://github.com/th-deng/sonarqube-on-gradle-sample)
+[[Refer] jeeneee/소나큐브(SonarQube) 도입](https://jeeneee.dev/springboot/springboot-2-introduction-of-sonarqube/)
+
+## Run SonarQube in Docker
+
+```bash
+chmod +x ./sonarqube-docker/run.sh
+./sonarqube-docker/run.sh
+
+ID: admin
+PW: admin
+
+TOKEN: b913fa691ddae72728d323eed96834d8312e3996
+```
+
+## Setup build.gradle
+
+> 위의 빌드 스크립트에서 sonar.profile을 소나큐브의 default quality gate인 Sonar way로 설정하였는데, 이는 커버리지가 80%가 넘어가야 Pass하는 규칙을 포함한다.  
+> 또한, 소나큐브는 새로운 코드에 대해서만 통과/실패를 나누기 때문에 api 모듈이 통과된 것으로 나타나는 것이다.
+
+## Run gradlew
+
+```bash
+./gradlew test sonarqube
+```
+
+![sonarqube-overview](./img/sonarqube-overview.png)
+![sonarqube-issues](./img/sonarqube-issues.png)
