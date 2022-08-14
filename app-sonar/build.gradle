@@ -147,7 +147,7 @@ subprojects {
 
     sonarqube {
         properties {
-            property "sonar.host.url", project.findProperty("sonar.host.url") ?: "http://127.0.0.1:9000"
+            property "sonar.host.url", project.findProperty("sonar.host.url") ?: "http://sonarqube:9000"
             property "sonar.login", "b913fa691ddae72728d323eed96834d8312e3996"
             property "sonar.sources", "src"
             property "sonar.language", "java"
