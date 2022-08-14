@@ -1,0 +1,6 @@
+projectKey=app-sonar:app-core
+serverUrl=http://127.0.0.1:9000
+serverVersion=8.9.9.56886
+dashboardUrl=http://127.0.0.1:9000/dashboard?id=app-sonar%3Aapp-core
+ceTaskId=AYKdVW5tGVi7ZX7rJoFt
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYKdVW5tGVi7ZX7rJoFt

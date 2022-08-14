@@ -1,0 +1,2 @@
+me/zeroest/sonar/example/app/core/BasicOperatorTest.java
+ me.zeroest.sonar.example.app.core.BasicOperatorTest

@@ -1,0 +1,8 @@
+me/zeroest/sonar/example/app/core/Operation.java
+ me.zeroest.sonar.example.app.core.Operation
+me/zeroest/sonar/example/app/core/BasicOperator.java
+ me.zeroest.sonar.example.app.core.BasicOperator
+ me.zeroest.sonar.example.app.core.BasicOperator$1
+me/zeroest/sonar/example/app/core/ExtendedOperator.java
+ me.zeroest.sonar.example.app.core.ExtendedOperator
+ me.zeroest.sonar.example.app.core.ExtendedOperator$1

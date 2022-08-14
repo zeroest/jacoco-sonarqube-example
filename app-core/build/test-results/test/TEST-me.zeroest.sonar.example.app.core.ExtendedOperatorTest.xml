@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="me.zeroest.sonar.example.app.core.ExtendedOperatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-14T17:09:52" hostname="kyd-TFG255X" time="0.344">
+  <properties/>
+  <testcase name="Apply" classname="me.zeroest.sonar.example.app.core.ExtendedOperatorTest" time="0.344"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

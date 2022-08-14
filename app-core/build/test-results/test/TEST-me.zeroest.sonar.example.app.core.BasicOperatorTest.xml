@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="me.zeroest.sonar.example.app.core.BasicOperatorTest" tests="3" skipped="3" failures="0" errors="0" timestamp="2022-08-14T17:09:52" hostname="kyd-TFG255X" time="0.002">
+  <properties/>
+  <testcase name="applyPlus()" classname="me.zeroest.sonar.example.app.core.BasicOperatorTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="applyMinus()" classname="me.zeroest.sonar.example.app.core.BasicOperatorTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="applyDefault()" classname="me.zeroest.sonar.example.app.core.BasicOperatorTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
